@@ -13,7 +13,6 @@ a = 1
 
 for n in range(X)[2:]:
     b = beki(n,X)
-    print(n,b)
     if b > a:
         a = b
 
