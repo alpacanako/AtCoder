@@ -1,5 +1,7 @@
 N = int(input())
 A = [int(i) for i in input().split()]
-B = [abs(A[i]-i-1) for i in range(N)]
-b = int(sum(B)/N)
-print(min(abs(sum(B)-b*N),abs(sum(B)-b*N-b)))
+B = [A[i]-i for i in range(N)]
+B.sort()
+b = B[int(N//2)]
+C = [abs(B[i]-b) for i in range(N)]
+print(sum(C))
