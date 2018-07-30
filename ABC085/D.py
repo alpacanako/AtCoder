@@ -1,19 +1,19 @@
 N,H = map(int,input().split())
-A = []
+Ma = 1
 B = []
 for i in range(N):
     a,b = map(int,input().split())
-    A.append(a)
     B.append(b)
+    if a > Ma:
+        Ma = a
 C = 0
 while H > 0:
-    Ma = max(A)
     if B == []:
         C += int(-(-H//Ma))
         H = 0
     else:
         Mb = max(B)
-        if Ma > Mb:
+        if Ma >= Mb:
             C += int(-(-H//Ma))
             H = 0
         else:
