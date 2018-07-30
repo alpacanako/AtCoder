@@ -7,15 +7,17 @@ for i in range(N):
     B.append(b)
 C = 0
 while H > 0:
-    C += 1
     Ma = max(A)
     if B == []:
-        H -= Ma
+        C += int(-(-H//Ma))
+        H = 0
     else:
         Mb = max(B)
         if Ma > Mb:
-            H -= Ma
+            C += int(-(-H//Ma))
+            H = 0
         else:
+            C += 1
             H -= Mb
             B.remove(Mb)
 print(C)
