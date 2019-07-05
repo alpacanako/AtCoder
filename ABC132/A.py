@@ -1,9 +1,6 @@
 S = list(input())
-str = "No"
-if S[0] == S[1]:
-    if S[2] == S[3]:
-        str = "Yes"
-else:
-    if S.count(S[0]) == 2 and S.count(S[1]) == 2:
-        str = "Yes"
+str = "Yes"
+for char in S:
+    if S.count(char) != 2:
+        str = "No"
 print(str)
