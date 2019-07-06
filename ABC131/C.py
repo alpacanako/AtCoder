@@ -1,8 +1,8 @@
-import math
+import fractions
 
 A,B,C,D = map(int,input().split())
 
-gcd = math.gcd(C,D)
+gcd = fractions.gcd(C,D)
 lcm = int(C*D/gcd)
 
 comp = int(((lcm//C) + (lcm//D) - 1) * ((B-A+1)//lcm))
