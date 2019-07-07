@@ -1,14 +1,24 @@
-import fractions
+import math
 
 A,B,C,D = map(int,input().split())
 
-gcd = fractions.gcd(C,D)
+gcd = math.gcd(C,D)
 lcm = int(C*D/gcd)
 
-comp = int(((lcm//C) + (lcm//D) - 1) * ((B-A+1)//lcm))
+r = A%C
+div_c = int((B-A+1+ +C-r)//C)
+if r == 0:
+    div_c += 1
 
-for i in range((B-A+1)%lcm):
-    if (A+i)%C == 0 or (A+i)%D == 0:
-        comp += 1
+r = A%D
+if r == 0:
+    r = -D
+div_d = int((B-A+1+ +D-r)//D)
 
-print(B-A+1-comp)
+r = A%lcm
+if r == 0:
+    r = -lcm
+div_cd = int((B-A+1+ +lcm-r)//lcm)
+
+print(div_c, div_d, div_cd)
+print(B-A+1 -div_c -div_d +div_cd)
